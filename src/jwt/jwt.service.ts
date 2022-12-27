@@ -4,7 +4,7 @@ import { Injectable } from "@nestjs/common";
 import {
     jwtConstants
 } from '../../constants';
-  
+
 import {
     ExtractJwt,
     Strategy
