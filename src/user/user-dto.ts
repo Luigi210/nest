@@ -1,4 +1,7 @@
 /* eslint-disable prettier/prettier */
+import { ProductsDto } from "src/products/products-dto";
+
+/* eslint-disable prettier/prettier */
 export class UserDto {
   firstName: string;
   lastName: string;
@@ -12,7 +15,9 @@ export class UserDto {
     countryCode: string;
     CVV: number;
     accountNumber: string;
+    balance: number
   };
+  favoriteProducts: ProductsDto[]
 }
 
 export class CreateUserDto {

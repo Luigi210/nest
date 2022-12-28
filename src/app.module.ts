@@ -10,13 +10,16 @@ import { jwtConstants } from '../constants';
 import { JwtService } from './jwt/jwt.service';
 import { JwtModule as JWT } from './jwt/jwt.module';
 import { AuthModule } from './auth/auth.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost:27017/jusan'),
     UserModule,
     
-    AuthModule
+    AuthModule,
+    
+    ProductsModule
   ],
   controllers: [AppController],
   providers: [AppService],

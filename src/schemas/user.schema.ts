@@ -2,6 +2,7 @@
 import { Prop, raw, Schema, SchemaFactory, } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 import { Account } from './account.schema';
+import { Products } from './products.schema';
 
 export type UserDocument = HydratedDocument<User>;
 
@@ -27,6 +28,9 @@ export class User {
 	
 	@Prop()
 	creditCard: string
+	
+	@Prop([Products])
+	favoriteProducts: Products
 	
 	@Prop()
 	email: string

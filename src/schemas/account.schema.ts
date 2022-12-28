@@ -18,6 +18,9 @@ export class Account {
 
     @Prop()
     countryCode: string;
+
+    @Prop({ default: null })
+    balance: number;
     
     @Prop()
     CVV: number;
