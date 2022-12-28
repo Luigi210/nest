@@ -16,7 +16,7 @@ export class AccountController {
         return this.accService.bindAcc(id, accDto)
     }
 
-    @Get()
+    @Get('/findbyphone')
     findAccount( @Body() phoneNumberDto: PhoneNumberDto) {
         return this.accService.findAccountByPhonenumber(phoneNumberDto.phoneNumber)
 
