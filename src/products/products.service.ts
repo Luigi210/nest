@@ -43,4 +43,23 @@ export class ProductsService {
             }
         })
     }
+
+    async buyProduct(product: {
+        id:string,
+        userId: string
+    }
+    ){
+        const found = await this.productModel.findById(product.id)
+
+        const user = await this.userModel.findById(product.userId)
+
+        return await this.userModel.findByIdAndUpdate(product.userId, {
+            $push: {
+                'bought': found
+            },
+            $set: {
+                'account.bought': user.account.balance - found.price,
+            }
+        })
+    }
 }

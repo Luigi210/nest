@@ -23,6 +23,9 @@ export class Products {
     // })
     // photo: 
 
+    @Prop({default: 12000})
+    price: number
+
     @Prop([Comments])
     comments: Comments[]
 }

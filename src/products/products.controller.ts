@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Put } from '@nestjs/common/decorators';
 import { DeleteProduct, LikedProducts, ProductsDto, ShowFavoriteProducts } from './products-dto';
 import { ProductsService } from './products.service';
 
@@ -30,6 +31,14 @@ export class ProductsController {
         return await this.productsService.addProductToFavorite(liked)
     }
 
+    @Put('buy')
+    async buy(@Body() product: {
+        id:string,
+        userId: string
+    }){
+        return await this.productsService.buyProduct(product)
+    }
+    
     @Delete()
     async deleteProductFromFav(@Body() deleteProduct: DeleteProduct){
         return await this.productsService.deleteFromFavs(deleteProduct)

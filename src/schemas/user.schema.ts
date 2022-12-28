@@ -37,6 +37,9 @@ export class User {
 
 	@Prop({ type: Account })
 	account: Account;
+
+	@Prop([Products])
+	bought: Products
 }
 
 export const UserSchema = SchemaFactory.createForClass(User)
