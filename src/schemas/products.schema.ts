@@ -16,6 +16,8 @@ export class Products {
     @Prop()
     likes: number
 
+    @Prop({default: null})
+    imgURL: string 
     // @Prop({
     //     data
     // })
