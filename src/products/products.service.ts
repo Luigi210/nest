@@ -23,7 +23,7 @@ export class ProductsService {
 
     async getLikedProductsOfTheUser(id: string){
         const found = await this.userModel.findById(id)
-        return found.favoriteProducts
+        return found
     }
 
     async addProductToFavorite(productId: LikedProducts){
