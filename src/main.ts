@@ -12,6 +12,10 @@ async function bootstrap() {
     .addTag('jusan')
     .build()
 
+  app.enableCors({
+    origin: '*',
+    credentials: true,
+  })
   const document = SwaggerModule.createDocument(app, config)
   SwaggerModule.setup('api', app, document)
   await app.listen(3000);
