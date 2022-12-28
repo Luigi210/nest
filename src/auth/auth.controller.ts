@@ -17,12 +17,13 @@ export class AuthController {
     async login(@Body() authDto: AuthDto){
         const logged = await this.authSerivce.login(authDto)
         
-        if(!("message" in logged)){
+        // if(!("message" in logged)){
             // console.log(logged)
-            return {
-                access_token: this.jwtServ.sign(logged),
-            }
-        }
+            // return logged
+            // return {
+            //     access_token: this.jwtServ.sign(logged),
+            // }
+        // }
         return logged
     }
 

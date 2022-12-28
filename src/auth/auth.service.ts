@@ -53,13 +53,14 @@ export class AuthService {
         }
         if(found){
             if((await this.comparePassword(user.password, found.password)) === true){
-                console.log("equal")
-                const payload = {
-                    username: found.firstName,
-                    email: found.email
-                };
-                console.log(payload) 
-                return (payload)
+                // console.log("equal")
+                // const payload = {
+                //     username: found.firstName,
+                //     email: found.email
+                // };
+                // console.log(payload) 
+                // return (payload)
+                return found
             }
         }
         else {
